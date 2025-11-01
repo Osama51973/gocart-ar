@@ -42,7 +42,7 @@ export const dummyRatingsData = [
 export const dummyStoreData = {
     id: "store_1",
     userId: "user_1",
-    name: "النسوق السعيد",
+    name: "Happy Shop",
     description: "At Happy Shop, we believe shopping should be simple, smart, and satisfying. Whether you're hunting for the latest fashion trends, top-notch electronics, home essentials, or unique lifestyle products — we've got it all under one digital roof.",
     username: "happyshop",
     address: "3rd Floor, Happy Shop , New Building, 123 street , c sector , NY, US",
