@@ -1,18 +1,20 @@
 // /app/[lang]/layout.js
 
-export default function RootLayout({ children, params }) {
-  // The 'lang' parameter is automatically populated by Next.js i18n routing.
-  const { lang } = params;
+import { getDirection } from '../../i18nConfig'; // Import your helper
+import ClientProvider from '@/i18n/ClientProvider'; // Import the new provider
 
-  // Determine the direction based on the locale
-  const dir = lang === 'ar' ? 'rtl' : 'ltr';
+export default function RootLayout({ children, params }) {
+  const { lang } = params;
+  const dir = getDirection(lang); // Use the helper from i18nConfig
 
   return (
-    // 1. Set the language on the <html> tag
+    // 1. Set the language and direction on the <html> tag
     <html lang={lang} dir={dir}>
       <body>
-        {/* Your application content will be rendered here */}
-        {children}
+        {/* 2. Wrap children with the ClientProvider */}
+        <ClientProvider lng={lang}>
+          {children}
+        </ClientProvider>
       </body>
     </html>
   );
