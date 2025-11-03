@@ -49,3 +49,53 @@ button { cursor: pointer; }
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
 }
+
+/* Navbar styles */
+.site-nav { background: #fff; border-bottom: 1px solid #e5e7eb; }
+.site-nav hr { border: none; border-top: 1px solid #eef2f7; margin: 0; }
+.nav-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: 0.75rem 0; }
+.brand { font-weight:700; font-size:1.5rem; color:#0f172a; text-decoration:none; display:flex; align-items:center; gap:0.25rem; }
+.brand-go { color:#059669; }
+.brand-dot { color:#059669; font-size:1.4rem; line-height:0.8; }
+.brand-pill { background:#059669; color:#fff; font-size:0.6rem; padding:0.15rem 0.5rem; border-radius:999px; margin-left:0.5rem; }
+
+.nav-links { display:none; gap:1rem; }
+.nav-links a { color:#374151; text-decoration:none; }
+.nav-actions { display:flex; align-items:center; gap:0.75rem; }
+.search-form { display:none; align-items:center; gap:0.5rem; background:#f3f4f6; padding:0.35rem 0.6rem; border-radius:999px; }
+.search-form input { border:0; background:transparent; outline:none; min-width:160px; }
+.cart-link { position:relative; display:inline-flex; align-items:center; gap:0.4rem; color:#374151; text-decoration:none; }
+.cart-count { position:absolute; top:-6px; left:8px; background:#111827; color:#fff; font-size:10px; padding:2px 5px; border-radius:999px; }
+.btn { border:0; padding:0.5rem 0.9rem; border-radius:999px; }
+.btn-primary { background:#4f46e5; color:#fff; }
+
+/* Mobile: show brand and actions, hide nav-links and search */
+@media(min-width: 640px) {
+    .nav-links { display:flex; }
+    .search-form { display:flex; }
+}
+
+/* Responsive product card tweaks */
+.product-card { display:flex; flex-direction:column; }
+.product-img-wrapper { display:flex; align-items:center; justify-content:center; background:#F5F5F5; padding:.5rem; border-radius:.5rem; overflow:hidden; }
+.product-img { width:100%; height:180px; object-fit:cover; transition: transform .25s ease; }
+.product-card-link { display:block; text-decoration:none; color:inherit; }
+.product-info { display:flex; justify-content:space-between; align-items:center; padding-top:0.5rem; }
+.rating-row { display:flex; gap:0.25rem; }
+.star-icon { display:block; }
+.page-title { font-size:1.5rem; color:#374151; margin:1.25rem 0; }
+.muted { color:#6b7280; font-weight:500; }
+
+@media (max-width: 480px) {
+    .product-img { height:150px; }
+    .nav-inner { padding:0.5rem 0; }
+    .brand { font-size:1.25rem; }
+}
+
+/* Mobile menu styles */
+.mobile-toggle { display:inline-flex; align-items:center; justify-content:center; background:transparent; border:0; font-size:1.15rem; padding:0.25rem; margin-left:0.5rem; }
+.nav-links[aria-hidden="true"] { display:none; }
+@media (max-width: 640px) {
+    .nav-links { position:absolute; left:0; right:0; top:56px; background:white; display:flex; flex-direction:column; gap:0.5rem; padding:1rem; box-shadow:0 10px 30px rgba(2,6,23,0.08); }
+    .nav-actions { gap:0.4rem; }
+}

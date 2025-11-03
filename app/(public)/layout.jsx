@@ -10,8 +10,10 @@ export default function PublicLayout({ children }) {
     return (
         <ClerkProviderClient>
             <StoreProvider>
-                <Banner />
-                <Navbar />
+                <div className="container">
+                    <Banner />
+                    <Navbar />
+                </div>
                 {children}
                 <Footer />
             </StoreProvider>
