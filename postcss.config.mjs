@@ -1,7 +1,6 @@
-const config = {
-  plugins: [
-    require('autoprefixer'),
-  ],
+// Use object form so Next's build can consume PostCSS plugins reliably.
+export default {
+  plugins: {
+    autoprefixer: {},
+  },
 };
-
-export default config;
